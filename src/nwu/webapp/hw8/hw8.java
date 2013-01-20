@@ -29,17 +29,7 @@ public class hw8 extends HttpServlet {
 		private FavoriteDAO favoriteDAO;
 		private UserDAO userDAO;
 		
-		public void init() throws ServletException {
-			String jdbcDriverName = getInitParameter("jdbcDriver");
-			String jdbcURL        = getInitParameter("jdbcURL");
-			
-			try {
-				userDAO  = new UserDAO(jdbcDriverName,jdbcURL,"nwu_user");
-				favoriteDAO   = new FavoriteDAO(jdbcDriverName,jdbcURL,"nwu_favorite");
-			} catch (MyDAOException e) {
-				throw new ServletException(e);
-			}
-		}
+		
 
 		public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        HttpSession session = request.getSession();
